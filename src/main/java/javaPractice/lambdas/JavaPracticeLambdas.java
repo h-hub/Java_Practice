@@ -4,13 +4,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
+/**
+ * @param args
+ * http://blog.agiledeveloper.com/2015/06/lambdas-are-glue-code.html
+ * https://youtu.be/1OpAgZvYXLQ
+ */
 public class JavaPracticeLambdas {
 
-	/**
-	 * @param args
-	 * http://blog.agiledeveloper.com/2015/06/lambdas-are-glue-code.html
-	 * https://youtu.be/1OpAgZvYXLQ
-	 */
 	public static void main(String[] args) {
 
 		System.out.println("My Java Practice : Lambdas");
@@ -55,27 +55,27 @@ public class JavaPracticeLambdas {
 		//here we are passing e to a static method
 		//valueOf is a static method
 		numbers	.stream()
-				.map(e -> String.valueOf(e))
-				.forEach( System.out::println );
+			.map(e -> String.valueOf(e))
+			.forEach( System.out::println );
 		
 		//here we are passing e to a static method (using method reference)
 		//valueOf is a static method
 		numbers	.stream()
-				.map(String::valueOf)
-				.forEach( System.out::println );
+			.map(String::valueOf)
+			.forEach( System.out::println );
 		
 		//parameter has become a target. calling a function on that object.
 		//Earlier cases it was an argument
 		numbers	.stream()
-				.map(e -> e.toString())
-				.forEach( System.out::println );
+			.map(e -> e.toString())
+			.forEach( System.out::println );
 		
 		System.out.println("--------------------------------------------------------------");
 		
 		//using two arguments
 		System.out.println(
-				numbers	.stream()
-						.reduce(0, (total, e) -> Integer.sum(total, e))
+			numbers	.stream()
+				.reduce(0, (total, e) -> Integer.sum(total, e))	
 		);
 		
 		System.out.println("--------------------------------------------------------------");
@@ -83,17 +83,17 @@ public class JavaPracticeLambdas {
 		//using two arguments
 		//using method referrence, but incoming and outgoing order of the parameters has to be the same
 		System.out.println(
-				numbers	.stream()
-						.reduce(0, Integer::sum)
+			numbers	.stream()
+				.reduce(0, Integer::sum)
 		);
 		
 		System.out.println("--------------------------------------------------------------");
 		
 		//first parameter is a target, other one is an argument, order matters.
 		System.out.println(
-				numbers	.stream()
-						.map(String::valueOf)
-						.reduce("", (carry, str) -> carry.concat(str))
+			numbers	.stream()
+				.map(String::valueOf)
+				.reduce("", (carry, str) -> carry.concat(str))
 		);
 		
 		System.out.println("--------------------------------------------------------------");
@@ -101,9 +101,9 @@ public class JavaPracticeLambdas {
 		//first parameter is a target, other one is an argument, order matters.
 		//using method references
 		System.out.println(
-				numbers	.stream()
-						.map(String::valueOf)
-						.reduce("", String::concat)
+			numbers	.stream()
+				.map(String::valueOf)
+				.reduce("", String::concat)
 		);
 		
 		//there are two limitation in method references
