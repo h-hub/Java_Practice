@@ -56,3 +56,59 @@ https://youtu.be/llGgO74uXMI
   - If we change schema we have to change model, controller, UI  etc.. this is effort duplication
   - Doing same validation in client side and back end is code duplication (Doing same thing)
   - Every piece of Knowledge in a System should have a single unambiguous autherative representation  
+  - Dry reduces the cost of development
+  - There are tolls to detect duplicate code
+# Single Responsibility (https://youtu.be/llGgO74uXMI?t=3448)
+  - Long methods are bad
+    - hard to test
+    - hard to read
+    - hard to remember
+    - obscured business rules
+    - hard to reuse
+    - lead to duplication
+    - low cohesion
+    - high coupling
+    - obsolete comments
+    - hard to debug
+  - Focus on Single level of abstraction
+    - code should be telling a story (Self documented) [Compose method pattern]
+  - Don't comment what, instead comment why
+  - A good code is like a good joke
+  - Classes also suffer from this
+# Open-Closed principal
+  - Open for extension and closed for modification
+- Abstraction and polymorphism are key
+  - Two options to make an enhancement
+    - change existing code
+    - add a small new module of code
+  - Can not make infinitly extensibl
+  - To make something extensible we need to know software and Domain.
+  - There are 3 kinds of people we work with
+     - knows domain verry well
+     - Know no domain, know software really well
+     - Know domain and software really well
+  - Before extensibility, ask for a domain expert. if no idea, then don't implement. Implement only when you get the requirment
+# Liskov's Principle
+  - Inheritnace should be used only for substitutability
+    - If an object of B should be used anywhere an object of A is used then use inheritance.
+    - If an object of B should use an objects of A then use composition / delegation
+  - inheritance demands more from a developer than the composition of delegation does
+  - Services if the derived c;ass should require no more and promise no less than the corresponding services of the base class
+  - User of a base class should be able to use an instance of a derived class whitout knowing the difference
+  - Good Examples
+    - public vs protected in base vs derived
+    - derived function can't throw any new checked exception not thrown by the base (unless the new exception extends the old one)
+    - collection of derived does not extend from collection of base
+  - Bad example
+    - Stack extends Vector
+# Dependency Inversion
+  - A class should not depend on another class, they both have to depend on an abstraction (Interface)
+  - We can use lambda expressions in this (need more info .. )
+# Interface segregation    
+  - Having multiple cohesive interfaces
+  
+-----------------------------------------------------------------------------------
+
+We use these principals when designing. In Strategic and Tactical designings.   
+  
+  
