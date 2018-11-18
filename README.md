@@ -2,3 +2,5 @@
 
 # Topics
   - Lambdas
+  - Streams
+  - Software Design
